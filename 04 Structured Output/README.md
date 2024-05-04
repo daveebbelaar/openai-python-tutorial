@@ -18,7 +18,11 @@ query = "Hi there, I have a question about my bill. Can you help me?"
 messages = [
     {
         "role": "system",
-        "content": "You're a helpful customer care assistant. Always respond in JSON format with content as the key",
+        "content": """
+        You're a helpful customer care assistant that can classify incoming messages and create a response.
+        Always response in the following JSON format: {"content": <response>, "category": <classification>}
+        Available categories: 'general', 'order', 'billing'
+        """,
     },
     {
         "role": "user",
@@ -26,13 +30,13 @@ messages = [
     },
 ]
 
-response = openai_service.client.chat.completions.create(
-    model=openai_service.model,
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
     messages=messages,
     response_format={"type": "json_object"},
 )
-
 message = response.choices[0].message.content
+
 type(message)  # str
 
 message_json = json.loads(message)
