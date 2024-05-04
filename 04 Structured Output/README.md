@@ -120,9 +120,3 @@ Keep in mind that the LLM can still hallucinate in both approaches. In function 
 ## Conclusion
 
 Both JSON mode and function calling are valuable tools for obtaining structured output from LLM applications. Function calling provides more control and is recommended when possible, while JSON mode offers flexibility when the exact structure is not critical.
-
-
-## Instructor
-
-
-## LangChain Structured Output
