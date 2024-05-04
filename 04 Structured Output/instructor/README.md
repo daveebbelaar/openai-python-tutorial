@@ -1,6 +1,6 @@
 # Instructor: Structured LLM Outputs
 
-[Instructor](https://github.com/jxnl/instructor) is a Python library that makes easy to work with structured outputs from large language models (LLMs). Built on top of Pydantic, it provides a simple, transparent, and user-friendly API to manage validation, retries, and streaming responses.
+[Instructor](https://github.com/jxnl/instructor) is a Python library that makes easy to work with structured outputs from large language models (LLMs). Built on top of Pydantic, it provides a simple, transparent, and user-friendly API to manage validation, retries, and streaming responses. The library leverages Function Calling, Tool Calling and constrained sampling modes like JSON mode to get structured output based on Pydantic schemas.
 
 ## Key Features
 
@@ -10,7 +10,7 @@
 - **Streaming Support**: Work with Lists and Partial responses
 - **Flexible Backends**: Integratea with various LLM providers beyond OpenAI
 
-## Get Started in Minutes
+## Installation
 
 Install Instructor with a single command:
 

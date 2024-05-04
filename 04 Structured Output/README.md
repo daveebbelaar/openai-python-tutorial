@@ -1,6 +1,6 @@
 # JSON Mode vs. Function Calling for Structured Output in LLM Applications
 
-When working with the OpenAI API, you have two main options for obtaining structured output responses from GPT models: JSON mode and Function calling. While both are powerful tools, understanding when to use each can enhance your workflow and give you more control over the output.
+When working with the OpenAI API directly, you have two main options for obtaining structured output responses from GPT models: JSON mode and Function calling. While both are powerful tools, they also have their limitations. Understanding when to use each can enhance your workflow and give you more control over the output. After learning about these two methods, we'll dive into [Instructor](https://github.com/daveebbelaar/python-openai-tutorial/tree/main/04%20Structured%20Output/instructor) to gain even greater control over the output from OpenAI's models.
 
 ## Why Use JSON Output?
 
