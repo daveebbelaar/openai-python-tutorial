@@ -63,16 +63,21 @@ tools = [
         "type": "function",
         "function": {
             "name": function_name,
-            "description": "Function to respond to a customer query.",
+            "description": f"Function to respond to a customer query.",
             "parameters": {
                 "type": "object",
                 "properties": {
                     "content": {
                         "type": "string",
-                        "description": "Your response to the ticket.",
+                        "description": "Your reply that we send to the customer.",
+                    },
+                    "category": {
+                        "type": "string",
+                        "enum": ["general", "order", "billing"],
+                        "description": "Category of the ticket.",
                     },
                 },
-                "required": ["content"],
+                "required": ["content", "category"],
             },
         },
     }
@@ -81,7 +86,7 @@ tools = [
 messages = [
     {
         "role": "system",
-        "content": "You're a helpful customer care assistant.",
+        "content": "You're a helpful customer care assistant that can classify incoming messages and create a response.",
     },
     {
         "role": "user",
@@ -89,8 +94,8 @@ messages = [
     },
 ]
 
-response = openai_service.client.chat.completions.create(
-    model=openai_service.model,
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
     messages=messages,
     tools=tools,
     tool_choice={"type": "function", "function": {"name": function_name}},
@@ -119,4 +124,4 @@ Keep in mind that the LLM can still hallucinate in both approaches. In function 
 
 ## Conclusion
 
-Both JSON mode and function calling are valuable tools for obtaining structured output from LLM applications. Function calling provides more control and is recommended when possible, while JSON mode offers flexibility when the exact structure is not critical.
+Both JSON mode and function calling are valuable tools for obtaining structured output from LLM applications. Function calling provides more control and is recommended when possible, while JSON mode offers flexibility when the exact structure is not critical. However, if you want even more control over your outputs, [Instructor](https://github.com/daveebbelaar/python-openai-tutorial/tree/main/04%20Structured%20Output/instructor) is the way to go.
