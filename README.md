@@ -52,9 +52,9 @@ To follow along with this tutorial, you'll need:
 5. Set up your OpenAI API key:
    - Create a `.env` file in the project root directory.
    - Add your OpenAI API key to the `.env` file:
-     ```
-     OPENAI_API_KEY=your_api_key_here
-     ```
+   ```
+   OPENAI_API_KEY=your_api_key_here
+   ```
 
 ## OpenAI API Models
 
