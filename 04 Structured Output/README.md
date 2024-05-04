@@ -121,4 +121,8 @@ Keep in mind that the LLM can still hallucinate in both approaches. In function 
 
 Both JSON mode and function calling are valuable tools for obtaining structured output from LLM applications. Function calling provides more control and is recommended when possible, while JSON mode offers flexibility when the exact structure is not critical.
 
-As the field of LLM evolves, we hope that OpenAI will provide even more control over language model outputs, such as allowing custom constrained decoding algorithms, to further enhance the reliability and accuracy of the generated responses.
+
+## Instructor
+
+
+## LangChain Structured Output
