@@ -73,7 +73,7 @@ The tutorials cover topics such as:
 
 ## Datalumina
 
-This tutorial is brought to you by [Datalumina®](https://datalumina.com), an AI development agency dedicated to building and optimizing intelligent systems for our clients. We share our knowledge and expertise through tutorials, videos, and courses to make practical data and artificial intelligence education accessible to everyone. For more tutorials and insights, check out our YouTube channel: [youtube.com/@daveebbelaar](https://www.youtube.com/@daveebbelaar)
+This tutorial is brought to you by [Datalumina®](https://datalumina.com), an AI development agency dedicated to building and optimizing intelligent systems for our clients. We share our knowledge and expertise through tutorials, videos, and courses to make practical data and artificial intelligence education accessible to everyone. For more tutorials and insights, check out our [YouTube channel](https://www.youtube.com/@daveebbelaar) and follow Dave on [LinkedIn](https://www.linkedin.com/in/daveebbelaar/).
 
 If you're interested in learning more about how we can help you beyond these tutorials, explore our programs:
 
