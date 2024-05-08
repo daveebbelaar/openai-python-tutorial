@@ -1,6 +1,6 @@
 # Instructor: Structured LLM Outputs
 
-[Instructor](https://github.com/jxnl/instructor) is a Python library that makes easy to work with structured outputs from large language models (LLMs). Built on top of Pydantic, it provides a simple, transparent, and user-friendly API to manage validation, retries, and streaming responses. The library leverages Function Calling, Tool Calling and constrained sampling modes like JSON mode to get structured output based on Pydantic schemas. You can find more examples in the [Cookbook](https://python.useinstructor.com/examples/).
+[Instructor](https://github.com/jxnl/instructor) is a Python library that makes easy to work with structured outputs from large language models (LLMs). Built on top of [Pydantic](https://docs.pydantic.dev/latest/), it provides a simple, transparent, and user-friendly API to manage validation, retries, and streaming responses. The library leverages Function Calling, Tool Calling and constrained sampling modes like JSON mode to get structured output based on Pydantic schemas. You can find more examples in the [Cookbook](https://python.useinstructor.com/examples/) and explanations of all the concepts covered in the library are [listed here](https://python.useinstructor.com/concepts/types/).
 
 ## Key Features
 
@@ -51,11 +51,11 @@ print(user_info.age)
 
 ## Using Instructor for Output Validation in LLM Applications
 
-Instructor is a powerful tool that allows you to validate the output of language models (LLMs) in your applications. By defining a desired output structure using Pydantic models and specifying validation rules, you can ensure that the generated responses meet your requirements.
+Instructor is a powerful tool that allows you to validate the output of language models (LLMs) in your applications. By defining a desired output structure using Pydantic models and specifying validation rules, you can ensure that the generated responses meet your requirements. If a query fails, you can instruct it to [automatically retry](https://python.useinstructor.com/concepts/retrying/).
 
-### [Validating Enum Categories](https://python.useinstructor.com/examples/classification/#defining-the-structures)
+### Validating Enum Categories
 
-One common use case is validating the category of a response using an enumeration (Enum). Here's an example:
+One common use case is validating the category of a response using an [enumeration (Enum)](https://python.useinstructor.com/examples/classification/#defining-the-structures). Here's an example:
 
 ```python
 class TicketCategory(str, Enum):
@@ -94,9 +94,9 @@ reply = client.chat.completions.create(
 
 If the generated response does not contain a valid category from the `TicketCategory` enum, Instructor will raise a validation error. You can specify the `max_retries` parameter to automatically retry the request and prompt the LLM to generate a valid response.
 
-### [Validating Confidence Scores](https://python.useinstructor.com/concepts/retrying/)
+### Validating Confidence Scores
 
-Another common validation scenario is ensuring that the generated confidence scores fall within a specific range. Here's an example:
+Another common validation scenario is ensuring that the generated confidence scores [fall within a specific range](https://docs.pydantic.dev/latest/concepts/fields/#numeric-constraints). Here's an example:
 
 ```python
 class Reply(BaseModel):
@@ -126,12 +126,12 @@ reply = client.chat.completions.create(
 )
 ```
 
-If the generated confidence score does not fall within the specified range, Instructor will raise a validation error. By setting `max_retries=3`, Instructor will automatically retry the request up to three times, prompting the LLM to generate a valid confidence score.
+If the generated confidence score does not fall within the specified range, Instructor will raise a validation error. By setting `max_retries=3`, Instructor will automatically [retry](https://python.useinstructor.com/concepts/retrying/) the request up to three times, prompting the LLM to generate a valid confidence score.
 
 
-## [Content Filtering](https://python.useinstructor.com/examples/self_critique/)
+## Content Filtering
 
-In addition to validating categories and confidence scores, Instructor also provides a powerful feature for content filtering using the `llm_validator`. This allows you to ensure that the generated responses adhere to specific guidelines or rules, such as avoiding content that could harm the company's reputation.
+In addition to validating categories and confidence scores, Instructor also provides a powerful feature for content filtering and [Self Correction](https://python.useinstructor.com/examples/self_critique/) using the `llm_validator`. This allows you to ensure that the generated responses adhere to specific guidelines or rules, such as avoiding content that could harm the company's reputation. They also provide a way to [moderate content](https://python.useinstructor.com/examples/moderation/) using OpenAI's moderation endpoint to check content compliance with OpenAI's usage policies.
 
 Here's an example of how to use `llm_validator` for content filtering:
 

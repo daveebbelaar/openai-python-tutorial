@@ -8,7 +8,7 @@ Using JSON output in your LLM applications provides more control and validation 
 
 ## JSON Mode
 
-In JSON mode, the model generates outputs exclusively formatted as valid JSON strings. However, you need to explicitly specify the desired JSON structure within the system prompt to guide the model towards the expected format.
+In [JSON mode](https://platform.openai.com/docs/guides/text-generation/json-mode), the model generates outputs exclusively formatted as valid JSON strings. However, you need to explicitly specify the desired JSON structure within the system prompt to guide the model towards the expected format.
 
 Here's an example of using JSON mode:
 
@@ -53,7 +53,7 @@ Important: When using JSON mode, you must also instruct the model to produce JSO
 
 ## Function Calling
 
-Function calling allows you to provide a list of functions that the model can call. You can specify the function name, description, and parameters, including their types and required fields.
+[Function Calling](https://platform.openai.com/docs/guides/function-calling) allows you to provide a list of functions that the model can call. You can specify the function name, description, and parameters, including their types and required fields. You can find more examples in this [Cookbook](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models).
 
 Here's an example of using function calling:
 
