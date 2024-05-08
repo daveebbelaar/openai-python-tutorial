@@ -1,6 +1,6 @@
 # Instructor: Structured LLM Outputs
 
-[Instructor](https://github.com/jxnl/instructor) is a Python library that makes easy to work with structured outputs from large language models (LLMs). Built on top of Pydantic, it provides a simple, transparent, and user-friendly API to manage validation, retries, and streaming responses. The library leverages Function Calling, Tool Calling and constrained sampling modes like JSON mode to get structured output based on Pydantic schemas.
+[Instructor](https://github.com/jxnl/instructor) is a Python library that makes easy to work with structured outputs from large language models (LLMs). Built on top of Pydantic, it provides a simple, transparent, and user-friendly API to manage validation, retries, and streaming responses. The library leverages Function Calling, Tool Calling and constrained sampling modes like JSON mode to get structured output based on Pydantic schemas. You can find more examples in the [Cookbook](https://python.useinstructor.com/examples/).
 
 ## Key Features
 
@@ -53,7 +53,7 @@ print(user_info.age)
 
 Instructor is a powerful tool that allows you to validate the output of language models (LLMs) in your applications. By defining a desired output structure using Pydantic models and specifying validation rules, you can ensure that the generated responses meet your requirements.
 
-### Validating Enum Categories
+### [Validating Enum Categories](https://python.useinstructor.com/examples/classification/#defining-the-structures)
 
 One common use case is validating the category of a response using an enumeration (Enum). Here's an example:
 
@@ -94,7 +94,7 @@ reply = client.chat.completions.create(
 
 If the generated response does not contain a valid category from the `TicketCategory` enum, Instructor will raise a validation error. You can specify the `max_retries` parameter to automatically retry the request and prompt the LLM to generate a valid response.
 
-### Validating Confidence Scores
+### [Validating Confidence Scores](https://python.useinstructor.com/concepts/retrying/)
 
 Another common validation scenario is ensuring that the generated confidence scores fall within a specific range. Here's an example:
 
@@ -129,7 +129,7 @@ reply = client.chat.completions.create(
 If the generated confidence score does not fall within the specified range, Instructor will raise a validation error. By setting `max_retries=3`, Instructor will automatically retry the request up to three times, prompting the LLM to generate a valid confidence score.
 
 
-## Content Filtering
+## [Content Filtering](https://python.useinstructor.com/examples/self_critique/)
 
 In addition to validating categories and confidence scores, Instructor also provides a powerful feature for content filtering using the `llm_validator`. This allows you to ensure that the generated responses adhere to specific guidelines or rules, such as avoiding content that could harm the company's reputation.
 

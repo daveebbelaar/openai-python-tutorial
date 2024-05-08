@@ -32,11 +32,11 @@ class Reply(BaseModel):
 reply = client.chat.completions.create(
     model="gpt-3.5-turbo",
     response_model=Reply,
-    max_retries=1,
+    max_retries=1,  # Don't allow retries
     messages=[
         {
             "role": "system",
-            "content": "You're a helpful customer care assistant that can classify incoming messages and create a response. Set the category to 'banana'.",
+            "content": "You're a helpful customer care assistant that can classify incoming messages and create a response. Always set the category to 'banana'.",
         },
         {"role": "user", "content": query},
     ],
@@ -46,11 +46,11 @@ reply = client.chat.completions.create(
 reply = client.chat.completions.create(
     model="gpt-3.5-turbo",
     response_model=Reply,
-    max_retries=3,
+    max_retries=3,  # Allow up to 3 retries
     messages=[
         {
             "role": "system",
-            "content": "You're a helpful customer care assistant that can classify incoming messages and create a response. Set the category to 'banana'.",
+            "content": "You're a helpful customer care assistant that can classify incoming messages and create a response. Always set the category to 'banana'.",
         },
         {"role": "user", "content": query},
     ],
