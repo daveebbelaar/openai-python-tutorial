@@ -8,7 +8,7 @@
 - **Retry Management**: Configure the number of retry attempts for your requests
 - **Validation**: Ensure LLM responses conform to your expectations with Pydantic validation
 - **Streaming Support**: Work with Lists and Partial responses
-- **Flexible Backends**: Integratea with various LLM providers beyond OpenAI
+- **Flexible Backends**: Integrate with various LLM providers beyond OpenAI
 
 ## Installation
 

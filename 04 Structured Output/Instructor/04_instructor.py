@@ -3,6 +3,11 @@ from pydantic import BaseModel, Field
 from openai import OpenAI
 from enum import Enum
 
+
+def send_reply(message: str):
+    print(f"Sending reply: {message}")
+
+
 # --------------------------------------------------------------
 # Instructor structured output example
 # --------------------------------------------------------------
@@ -39,6 +44,7 @@ type(reply)  # Reply
 print(reply.content)
 print(reply.category)
 
+send_reply(reply.content)
 
 # --------------------------------------------------------------
 # Instructor with Enum structured output example

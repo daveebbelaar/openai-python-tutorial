@@ -25,7 +25,7 @@ class Reply(BaseModel):
     content: str = Field(description="Your reply that we send to the customer.")
     category: TicketCategory
     confidence: float = Field(
-        ge=0, le=1, description="Confidence in the catagory prediction."
+        ge=0, le=1, description="Confidence in the category prediction."
     )
 
 
